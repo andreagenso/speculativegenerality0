@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>410</y>
+      <w>680</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>code::Venta
+--
+#codigo: String
+#fecha = java.util.Calendar.getInstance().getTime(): java.util.Date
+#descuento: Double
+#cliente: Cliente
+#detalleProductos = new ArrayList&lt;Producto&gt;(): ArrayList&lt;Producto&gt;
+--
++Venta(java.util.Date fecha, Cliente cliente, ArrayList&lt;Producto&gt; detalleProductos, Double descuento): ctor
+-totalVenta(): Double
++imprimirFactura(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>10</y>
+      <w>500</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>code::Cliente
+--
+#ci: String
+#nombre: String
+#direccion: String
+#telefono: String
+#nit: Nit
+--
++Cliente(String ci, String nombre, String direccion, String telefono, Nit nit): ctor
++mostrarCliente(Cliente cliente): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>0</y>
+      <w>360</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>code::Nit
+--
+#nroNit: String
+#direccion: String
+#telefono: String
+--
++Nit(String nroNit, String direccion, String telefono): ctor
++getDatosNit(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>250</y>
+      <w>570</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>code::ClienteExtranjero
+--
+#patrimonio: Double
+--
++ClienteExtranjero(String ci, String nombre, String direccion, String telefono, Nit nit): ctor
++declararPatrimonio(Double patrimonio): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>420</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>code::Principal
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>200</y>
+      <w>490</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>code::Producto
+--
+#codigo: String
+#nombre: String
+#precioCompra: Double
+#precioVenta: Double
+--
++Producto(String nombre, Double precioCompra, Double precioVenta): ctor
+#mostrarProducto(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>180</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>30</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>350</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>110</y>
+      <w>170</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>150.0;300.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
