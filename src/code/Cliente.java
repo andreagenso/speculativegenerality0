@@ -16,7 +16,7 @@ public class Cliente {
 	}
 	
 	public void mostrarCliente(Cliente cliente){
-		System.out.println("Datos del cliente:");
+		System.out.println("\nDatos del cliente:");
 		System.out.println("\tCI: " + cliente.ci );
 		System.out.println("\tNombre: " + cliente.nombre );
 		System.out.println("\tDireccion: " + cliente.direccion );

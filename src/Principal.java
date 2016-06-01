@@ -23,23 +23,21 @@ public class Principal {
 		
 		detalleProductos.add(producto1);
 		detalleProductos.add(producto2);		
-		Venta venta1 = new Venta(java.util.Calendar.getInstance().getTime(), cliente1, detalleProductos, 0.0);
+		Venta venta1 = new Venta(java.util.Calendar.getInstance().getTime(), cliente1, detalleProductos, 7.0);
 		
 		detalleProductos.clear();
 		detalleProductos.add(producto2);
 		detalleProductos.add(producto3);
-		Venta venta2 = new Venta(java.util.Calendar.getInstance().getTime(), cliente2, detalleProductos, 0.0);
-		
+		Venta venta2 = new Venta(java.util.Calendar.getInstance().getTime(), cliente2, detalleProductos, 5.5);
 		
 		detalleProductos.clear();
 		detalleProductos.add(producto1);
 		detalleProductos.add(producto2);
 		detalleProductos.add(producto3);
-		Venta venta3 = new Venta(java.util.Calendar.getInstance().getTime(), cliente1, detalleProductos, 0.0);	
+		Venta venta3 = new Venta(java.util.Calendar.getInstance().getTime(), cliente1, detalleProductos, 3.0);	
 				
 		venta1.imprimirFactura();
 		venta2.imprimirFactura();
 		venta3.imprimirFactura();				
 	}
-
 }

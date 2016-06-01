@@ -16,30 +16,36 @@ public class Venta {
 		this.cliente = cliente;
 	}
 	
-		
-	private Double totalVenta() {
+	public Double totalVenta()
+	{
+		if (detalleProductos.size() > 0)
+			return ventas();
+		else
+			return 0.0;
+	}
+	
+	public Double ventas() {
 		Double total = 0.0;
 		
 		for (int i=0;i<detalleProductos.size();i++) {
-			total = total + detalleProductos.get(i).precioVenta;			
+			total = total + detalleProductos.get(i).precioVenta - descuento;			
 		}
 		return total;
 	}
 	
-	
 	public void imprimirFactura(){
 		System.out.println("Datos de la venta:");
 		System.out.println("\tCodigo: " + codigo);
-		System.out.println("\tFecha: " + fecha.get(java.util.Calendar.DAY_OF_MONTH) + 
-				"/" + fecha.get(java.util.Calendar.MONTH) + "/" + fecha.get(java.util.Calendar.YEAR));
+		
+		System.out.println("\tFecha: " + fecha.get(java.util.Calendar.DAY_OF_MONTH) +"/" 
+		+ fecha.get(java.util.Calendar.MONTH) + "/" + fecha.get(java.util.Calendar.YEAR));
+		
 		System.out.println("\tDescuento: " + descuento);
 		cliente.mostrarCliente(cliente);
-		System.out.println("\tDetalle de productos: ");		
-		for (int i=0;i<detalleProductos.size();i++) {
+		System.out.println("\nDetalle de productos: ");		
+		for (int i=0;i<detalleProductos.size();i++) 
 			detalleProductos.get(i).mostrarProducto();			
-		}
-		System.out.println("\tTOTAL: " + totalVenta());
-		
+		System.out.println("\tTOTAL: " + totalVenta());	
+		System.out.println("_____________________________________________________");
 	}
-	
 }
